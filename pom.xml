@@ -10,7 +10,7 @@
     <version>${revision}</version>
 
     <modules>
-        <module>quartzcommon-utils</module>
+        <module>quartzcommon-util</module>
         <module>quartzcommon-exception</module>
         <module>quartzcommon-spi</module>
     </modules>
@@ -22,6 +22,7 @@
         <revision>1.0.0</revision>
 
         <slf4j.version>1.7.30</slf4j.version>
+        <jackson.version>2.11.1</jackson.version>
 
         <maven.javadoc.failOnError>false</maven.javadoc.failOnError>
         <maven.compiler.encoding>UTF-8</maven.compiler.encoding>
@@ -45,6 +46,25 @@
                 <artifactId>slf4j-api</artifactId>
                 <version>${slf4j.version}</version>
             </dependency>
+
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-databind</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.fasterxml.jackson.datatype</groupId>
+                <artifactId>jackson-datatype-jdk8</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.fasterxml.jackson.datatype</groupId>
+                <artifactId>jackson-datatype-jsr310</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
 

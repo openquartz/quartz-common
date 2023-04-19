@@ -47,7 +47,7 @@ public final class ExtensionLoader<T> {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(ExtensionLoader.class);
 
-    private static final String HMILY_DIRECTORY = "META-INF/easyfile/";
+    private static final String EXTENSION_DIRECTORY = "META-INF/openquartz/";
 
     private static final Map<Class<?>, ExtensionLoader<?>> LOADERS = new ConcurrentHashMap<>();
 
@@ -244,7 +244,7 @@ public final class ExtensionLoader<T> {
 
     private List<ExtensionEntity> findAllExtensionEntity(final ClassLoader loader) {
         List<ExtensionEntity> entityList = new ArrayList<>();
-        loadDirectory(HMILY_DIRECTORY + clazz.getName(), loader, entityList);
+        loadDirectory(EXTENSION_DIRECTORY + clazz.getName(), loader, entityList);
         return entityList.stream().sorted(Comparator.comparing(ExtensionEntity::getOrder))
             .collect(Collectors.toCollection(LinkedList::new));
     }
